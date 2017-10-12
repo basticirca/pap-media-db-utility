@@ -99,3 +99,6 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+dsa_media_control_kit.db
+pip-selfcheck.json
