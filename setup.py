@@ -24,7 +24,7 @@ print("   > path:" + requirements_file)
 pip.main(["install", "--ignore-installed", "--prefix", env_dir, "-r", requirements_file])
 
 # create database
-import db.base
-from db.models import tables
+import database.base
+from database.models import tables
 print(" > creating database")
-db.base.recreate_database()
+database.base.recreate_database()
