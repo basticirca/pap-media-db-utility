@@ -27,6 +27,12 @@ requirements_file = os.path.dirname(os.path.realpath(__file__)) + "\\requirement
 print("   > path:" + requirements_file)
 pip.main(["install", "--ignore-installed", "--target", env_dir, "-r", requirements_file])
 
+# ensure database path exists
+from database.config import dev
+db_dir = os.path.dirname(os.path.realpath(__file__)) + '\\' + dev.SQLALCHEMY_DATABASE_DEBUG_DIR
+if not os.path.exists(db_dir):
+    os.makedirs(db_dir)
+
 # create database
 import database.base
 from database.models import tables
