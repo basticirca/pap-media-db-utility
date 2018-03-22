@@ -15,6 +15,8 @@ def set_database_to_default(recreate=True):
   a = None
   
 if __name__ == "__main__":
+  set_database_to_default()
+  '''
   a = Api(bind=database.base.engine)
   a.open()
   s = a._db
@@ -45,3 +47,4 @@ if __name__ == "__main__":
   }"""
   s.add(p)
   s.commit()
+  '''
